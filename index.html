@@ -677,21 +677,6 @@
             filterByCategory('全部');
             setTimeout(() => { updateTabStyles(0); }, 100);
         })();
-
-        // 底部導航點擊
-        (function() {
-            const navItems = document.querySelectorAll('.nav-item');
-            navItems.forEach(item => {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    navItems.forEach(nav => nav.classList.remove('current-page'));
-                    this.classList.add('current-page');
-                    navItems.forEach(nav => nav.removeAttribute('aria-current'));
-                    this.setAttribute('aria-current', 'page');
-                });
-            });
-        })();
-
         // Banner 輪播 - 獨立手勢控制
         (function() {
             let currentSlide = 0;
